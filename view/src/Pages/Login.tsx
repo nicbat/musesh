@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { webSocketContext } from '../App';
 import Button from '../Components/Button';
 import '../Styles/Login.css';
-function Login(){
+function Login(recomendedSongs:[]){
     const navigate = useNavigate();
+    const {groupId} = useParams();
     const getTopSong = async () =>{
         await fetch('http://localhost:5000/generate', {
             method: 'GET',
@@ -14,6 +16,18 @@ function Login(){
             console.log(response);
         });
     }
+    const ws = React.useContext(webSocketContext); 
+    useEffect(() => {
+        ws.addEventListener("message", function(evt) {
+            const message = JSON.parse(evt.data);
+            console.log("message from server", message);
+            if(message.mode && (message.mode === "recomendedSongs")){
+                recomendedSongs = message.recomendedSongs;
+                navigate("/songs/"+message.groupId);
+            }
+        });
+    }, []);
+    
     return(<>
         <div className='wrapper'>
             <div className='leftSide'>
@@ -21,7 +35,7 @@ function Login(){
             <input type="text" id="link" name="userlink"></input><br></br>
             <Button text={"next"} onClick={()=>{
                 getTopSong();
-                navigate("/");
+                navigate("/select/"+groupId);
             }}/>
             </div>
             

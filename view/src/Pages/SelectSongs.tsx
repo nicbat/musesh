@@ -1,10 +1,25 @@
+import React, { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { webSocketContext } from "../App";
 import HeaderBar from "../Components/HeaderBar";
 import SongTile from "../Components/SongTile";
 import "../Styles/SelectSongs.css"
 
-function SelectSongs() {
-
-
+function SelectSongs(selectedSongs:[],recomendedSongs:[]) {
+    const navigate = useNavigate();
+    const {groupId} = useParams();
+    const ws = React.useContext(webSocketContext); 
+    useEffect(() => {
+        ws.addEventListener("message", function(evt) {
+            const message = JSON.parse(evt.data);
+            console.log("message from server", message);
+            if(message.mode && (message.mode === "selectedSongs")){
+                selectedSongs = message.selectedSongs;
+                navigate("/songs/"+message.groupId);
+            }
+        });
+    }, []);
+    
     return (
         <div className="selectSongs">
             <HeaderBar text={"Pick a few of your top songs:"} buttontext={"click me!"} buttonOnClick={(e) => {

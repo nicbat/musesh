@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Landing from './Pages/Landing';
 import Login from './Pages/Login';
@@ -28,14 +28,17 @@ function App() {
     }
   }, []);
 
+  const recomendedSongs = useRef([]);
+  const selectedSongs = useRef([]);
+
   return (
     <webSocketContext.Provider value={ws}>
       <Router>
         <Routes>
           <Route path="/" element={<Landing/>}/>
-          <Route path="/login/:groupId" element={<Login/>}/>
+          <Route path="/login/:groupId" element={<Login recomendedSongs={recomendedSongs.current}/>}/>
           <Route path="/group/:groupId" element={<GroupCreation/>}/>
-          <Route path="/select/:groupId" element={<SelectSongs/>}/>
+          <Route path="/select/:groupId" element={<SelectSongs selectedSongs={selectedSongs.current} recomendedSongs={recomendedSongs.current}/>}/>
           <Route path="*" element={<>404: NOT FOUND</>}/>
         </Routes>
       </Router>
