@@ -29,18 +29,6 @@ function App() {
   }, []);
 
   return (
-<<<<<<< Updated upstream
-    <Router>
-      <Routes>
-        <Route path="/" element={<Landing/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/GroupCreation" element={<GroupCreation/>}/>
-        <Route path="/:groupId" element={<Group/>}/>
-        <Route path="/test" element={<SelectSongs/>}/>
-        <Route path="*" element={<>404: NOT FOUND</>}/>
-      </Routes>
-    </Router>
-=======
     <webSocketContext.Provider value={ws}>
       <Router>
         <Routes>
@@ -52,7 +40,6 @@ function App() {
         </Routes>
       </Router>
     </webSocketContext.Provider>
->>>>>>> Stashed changes
   );
 }
 
