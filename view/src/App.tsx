@@ -1,5 +1,5 @@
 import React from 'react';
-import Landing from './Landing';
+import Landing from './Pages/Landing';
 import logo from './logo.svg';
 
 function App() {

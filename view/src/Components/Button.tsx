@@ -1,7 +1,9 @@
+import "./component.css"
 interface ButtonProps {
     text: string,
     onClick: React.MouseEventHandler<HTMLDivElement>;
 }
+
 
 function Button(props: any) {
     return (
