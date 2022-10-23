@@ -25,9 +25,15 @@ function SongTile(props: SongTileProps) {
                 }} 
                 />
             </div>
-            {hover && <div className="songText">
+            {hover && <div className="songText" onMouseEnter={(e) => {
+                    setHover(true);
+                }} onMouseLeave={(e) => {
+                    setHover(false);
+                }} >
                 {props.title}
+                <br/>
                 {props.artist}
+                <br/>
                 {props.album}
             </div>}
         </div>

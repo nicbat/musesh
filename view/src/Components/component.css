@@ -62,19 +62,16 @@
     position: absolute;
 }
 
-.songImage:hover {
-    border-color: turquoise;
-}
-
-.songTile:hover {
-    background-color: rgba(190, 74, 74, 0.5);
-}
 
 .songText {
     width: 200px;
     height: 200px;
     position: absolute;
     border-radius: 18px;
+    background-color: rgba(64, 224, 208, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* top: 0;
     left: 0; */
     /* visibility: hidden; */
