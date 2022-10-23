@@ -25,6 +25,8 @@ function SelectSongs(selectedSongs:any,setSelectedSongs:any,recomendedSongs: any
             <HeaderBar text={"Pick a few of your top songs:"} buttontext={"click me!"} buttonOnClick={(e) => {
                 console.log("click!");
                 navigate("/songs/"+groupId);
+                // ws.send(JSON.stringify({mode:"selectedSongs"}));
+
             }} />
             <div className="selectSongs">
             

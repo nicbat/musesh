@@ -36,6 +36,8 @@ function Login(recomendedSongs: any, setRecomendedSongs:any){
             <Button text={"next"} onClick={()=>{
                 getTopSong();
                 navigate("/select/"+groupId);
+                // ws.send(JSON.stringify({mode:"topSong"}));
+
             }}/>
             </div>
             

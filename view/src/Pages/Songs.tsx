@@ -1,13 +1,17 @@
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { webSocketContext } from "../App";
 import HeaderBar from "../Components/HeaderBar";
 import SongTile from "../Components/SongTile";
 
 function Songs(selectedSongs:any) {
     const navigate = useNavigate();
     const {groupId} = useParams();
+    const ws = React.useContext(webSocketContext); 
     return (
         <>
             <HeaderBar text={"These are the songs your group picked!"} buttontext={"create playlist"} buttonOnClick={(e) => {
+                // ws.send(JSON.stringify({mode:"createPlaylist"}));
                 }} />
             {/* {selectedSongs.current.map((song:any)=>{
                 return(

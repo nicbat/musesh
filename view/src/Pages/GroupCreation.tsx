@@ -4,10 +4,12 @@ import '../Styles/GroupCreation.css';
 import Button from '../Components/Button';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import ButtonLink from '../Components/ButtonLink';
+import { webSocketContext } from '../App';
 
 function GroupCreation(){
     const {groupId} = useParams();
     const navigate = useNavigate();
+    const ws = React.useContext(webSocketContext); 
 
     return(
         <>
@@ -16,7 +18,11 @@ function GroupCreation(){
                 <h1>Add People to Your Session</h1>
                 <img src={require('../images/frame.png')}></img>
                 <div className='btn'>
-                <Button text = {"Next"} onClick={()=>{navigate('/login/'+groupId)}}></Button>
+                    <Button text = {"Next"} onClick={()=>{
+                    navigate('/login/'+groupId);
+                    // ws.send(JSON.stringify({mode:"startVote"}));
+
+                    }}></Button>
                 </div>
             </div>
 
