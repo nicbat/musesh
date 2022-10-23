@@ -2,8 +2,6 @@ import React, { useRef, useState } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Landing from './Pages/Landing';
 import Login from './Pages/Login';
-import CreateGroup from './Pages/CreateGroup';
-import Group from './Pages/Group';
 import SelectSongs from './Pages/SelectSongs';
 import GroupCreation from './Pages/GroupCreation';
 
