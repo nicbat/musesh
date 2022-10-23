@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+html{
+    background-color: #272727;
+    overflow: hidden;
+}
+.Text {
+    padding-left: 15%;
+    margin-top: 15%;
+    font-family: Lato;
+    display: inline-block;
+}
+.Text p{
+    font-size:20px ;
+    color: white;
+    width: 60%;
+}
+.Text h1{
+    font-size: 60px;
+    color: #35DED6;
+}
+.wrapper{
+    display: flex;
+}
+.Text button{
+    margin-top: 20px;
+}

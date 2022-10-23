@@ -1,6 +1,6 @@
 {
   "name": "musesh_backend",
-  "version": "1.0.0",
+
   "description": "Manages the backend for the musesh app",
   "main": "index.js",
   "scripts": {
