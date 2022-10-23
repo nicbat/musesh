@@ -1,6 +1,6 @@
 import React from 'react';
-import Landing from './Landing';
-import SpotifyLink from './SpotifyLink';
+import Landing from './Pages/Landing';
+import SpotifyLink from './Pages/SpotifyLink';
 import logo from './logo.svg';
 
 function App() {

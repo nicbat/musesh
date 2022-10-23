@@ -8,14 +8,14 @@ interface HeaderBarProps {
 
 function HeaderBar(props: HeaderBarProps) { // if button information is not provided, button is not rendered
     return (
-        <div className="headerbar">
+        <nav className="headerbar">
             <div className="headertext">
                 {props.text}
             </div>
             {props.buttontext != undefined && props.buttonOnClick != undefined && <div className="headerbutton">
                 <Button onClick={props.buttonOnClick} text={props.buttontext}/>
             </div> }               
-        </div>
+        </nav>
     )
 }
 
