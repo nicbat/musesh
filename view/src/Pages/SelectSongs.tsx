@@ -5,7 +5,7 @@ import HeaderBar from "../Components/HeaderBar";
 import SongTile from "../Components/SongTile";
 import "../Styles/SelectSongs.css"
 
-function SelectSongs(selectedSongs:React.MutableRefObject<[]>,recomendedSongs:React.MutableRefObject<[]>) {
+function SelectSongs(selectedSongs:any,setSelectedSongs:any,recomendedSongs: any, setRecomendedSongs:any) {
     const navigate = useNavigate();
     const {groupId} = useParams();
     const ws = React.useContext(webSocketContext); 
@@ -14,7 +14,7 @@ function SelectSongs(selectedSongs:React.MutableRefObject<[]>,recomendedSongs:Re
             const message = JSON.parse(evt.data);
             console.log("message from server", message);
             if(message.mode && (message.mode === "selectedSongs")){
-                selectedSongs.current = message.selectedSongs;
+                setSelectedSongs(message.selectedSongs);
                 navigate("/songs/"+message.groupId);
             }
         });
@@ -25,7 +25,7 @@ function SelectSongs(selectedSongs:React.MutableRefObject<[]>,recomendedSongs:Re
             <HeaderBar text={"Pick a few of your top songs:"} buttontext={"click me!"} buttonOnClick={(e) => {
                 console.log("click!");
             }} />
-            {recomendedSongs.current.map((song)=>{
+            {recomendedSongs.current.map((song:any)=>{
                 return(
                 <SongTile title={song.title} artist={song.title} album={song.album} image={song.image}/>
 

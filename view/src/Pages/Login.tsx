@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { webSocketContext } from '../App';
 import Button from '../Components/Button';
 import '../Styles/Login.css';
-function Login(recomendedSongs:React.MutableRefObject<[]>){
+function Login(recomendedSongs: any, setRecomendedSongs:any){
     const navigate = useNavigate();
     const {groupId} = useParams();
     const getTopSong = async () =>{
@@ -22,7 +22,7 @@ function Login(recomendedSongs:React.MutableRefObject<[]>){
             const message = JSON.parse(evt.data);
             console.log("message from server", message);
             if(message.mode && (message.mode === "recomendedSongs")){
-                recomendedSongs.current = message.recomendedSongs;
+                setRecomendedSongs(message.recomendedSongs);
                 navigate("/songs/"+message.groupId);
             }
         });
