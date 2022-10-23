@@ -7,8 +7,9 @@ import Group from './Pages/Group';
 
 
 const ws = new WebSocket('ws://localhost:8080/', 'echo-protocol');
-
+const webSocketContext = React.createContext(ws);
 function App() {
+
   return (
     <Router>
       <Routes>

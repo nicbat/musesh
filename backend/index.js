@@ -80,7 +80,7 @@ const addSelectedSongs = (group, addedSongs) => {
 
 //receives arrays from flask app and sends them to the frontends
 const sendRecommendedSongs = (groupId) => {
-    needle.get('http://www.google.com', function(error, response) {//request from flask app
+    needle.get('http://localhost:5000', function(error, response) {//request from flask app
     if (!error && response.statusCode == 200)
         console.log(response.body);
         connections.forEach((connection) => {
