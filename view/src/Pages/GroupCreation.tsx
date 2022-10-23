@@ -7,6 +7,7 @@ import ButtonLink from '../Components/ButtonLink';
 
 function GroupCreation(){
     const {groupId} = useParams();
+    
     return(
         <>
         <div className='wrapper'>

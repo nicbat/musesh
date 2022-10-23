@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Components/Button';
 import '../Styles/Login.css';
 function Login(){
@@ -17,7 +18,10 @@ function Login(){
             <div className='leftSide'>
             <h3>Enter your Spotify link:</h3>
             <input type="text" id="link" name="userlink"></input><br></br>
-            <Button text={"next"} onClick={()=>getTopSong()}/>
+            <Button text={"next"} onClick={()=>{
+                getTopSong()
+                navigate
+            }}/>
             </div>
             
             <div className='spotifyIcon'>

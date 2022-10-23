@@ -86,7 +86,7 @@ const sendRecommendedSongs = (groupId) => {
         connections.forEach((connection) => {
             connection.sendUTF(JSON.stringify({
                 mode: "recomendedSongs",
-                id:id,
+                id:groupId,
                 recomendation: response.body,
             }))
         });
