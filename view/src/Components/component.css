@@ -49,6 +49,10 @@
     position: absolute;
 }
 
+.songImage:hover {
+    border-color: turquoise;
+}
+
 .songTile:hover {
     background-color: rgba(190, 74, 74, 0.5);
 }

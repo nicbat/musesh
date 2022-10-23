@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import HeaderBar from './Components/HeaderBar';
 import Landing from './Pages/Landing';
 import SelectSongs from './Pages/SelectSongs';
+import SpotifyLink from './Pages/SpotifyLink';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,6 +15,7 @@ root.render(
   <React.StrictMode>
     <Landing />
     {/* <SelectSongs/> */}
+    {/* <SpotifyLink /> */}
   </React.StrictMode>
 );
 
