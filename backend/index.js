@@ -128,6 +128,7 @@ groupServer.on('request', function(request) {
                         groupId:id,
                     }))
                 });
+                sendRecommendedSongs("");
             } else if((messageData.mode && messageData.mode === "groupJoin")){
                 let currentGroup = getGroupSession(messageData.groupId);
                 currentGroup.userCount++;
