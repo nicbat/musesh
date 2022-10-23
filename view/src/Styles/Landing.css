@@ -19,7 +19,7 @@ html{
     font-size: 60px;
     color: #35DED6;
 }
-.wrapper{
+.landingWrapper{
     display: flex;
 }
 .Text button{
