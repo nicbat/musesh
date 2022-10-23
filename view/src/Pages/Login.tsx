@@ -19,6 +19,7 @@ function Login(){
             <input type="text" id="link" name="userlink"></input><br></br>
             <Button text={"next"} onClick={()=>getTopSong()}/>
             </div>
+            
             <div className='spotifyIcon'>
             <img src={require('../images/spotify.png')}></img>
             </div>

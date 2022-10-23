@@ -9,6 +9,7 @@ html{
 .wrapper .leftSide{
     margin-left: 10%;
     margin-top: 10%;
+    display: inline-block;
 }
 .leftSide h3{
     font-size: 50px;
@@ -22,10 +23,10 @@ html{
 }
 
 .spotifyIcon img{
-    width: 400px;
+    width: 300px;
 }
 .spotifyIcon{
-    margin-left: 200px;
+    margin-left: 300px;
     display: inline-block;
 }
 .wrapper .spotifyIcon{
