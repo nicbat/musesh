@@ -1,0 +1,6 @@
+.selectSongs {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 300px;
+    overflow: scroll;
+}

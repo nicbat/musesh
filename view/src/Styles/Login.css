@@ -6,27 +6,27 @@ html{
     font-family: 'Lato';
 }
 
-.wrapper{
+.wrapper .leftSide{
     margin-left: 10%;
+    margin-top: 10%;
     display: inline-block;
 }
-.input h3{
-    font-size: 40px;
+.leftSide h3{
+    font-size: 50px;
 }
 .wrapper input{
     width: 70%;
     padding: 12px;
     border-radius: 35px;
     outline: none;
+    margin-bottom: 20%;
 }
-.input{
-    display:inline-block;
-}
+
 .spotifyIcon img{
-    width: 400px;
+    width: 300px;
 }
 .spotifyIcon{
-    margin-left: 200px;
+    margin-left: 300px;
     display: inline-block;
 }
 .wrapper .spotifyIcon{

@@ -1,4 +1,5 @@
 import spotipy
+import json
 from spotipy import SpotifyOAuth
 
 client_id = '9a70f79d75dd424cb4a19ef4b0ebb60e'  # Need to hide this
@@ -35,6 +36,30 @@ def generate_from_user_library():
 
     return total_recommendations
 
+def generate_from_json(from_json):
+    top_tracks = json.loads(from_json)
+    artist_set = set([])
+    seed_tracks = []
+    for i in top_tracks:
+        item = top_tracks[i]
+        seed_tracks.append(item['id'])
+        artist_set.add(item['artist_id'])
+    artists = list(artist_set)
+
+    total_recommendations = []
+    results = sp.recommendations(seed_artists=artists[0:5])  # If time, add more recs
+    results2 = sp.recommendations(seed_tracks=seed_tracks[0:5])
+    for item in results['tracks']:
+        total_recommendations.append(item['id'])
+    for item in results2['tracks']:
+        total_recommendations.append(item['id'])
+
+    f = open('UserRecs/%s.txt' % sp.me()['id'], "w")
+    for item in total_recommendations:
+        f.writelines(item + '\n')
+    f.close()
+
+    return total_recommendations
 
 # Grabs specific playlist from my personal library for testing purposes
 def temp_grab_playlist():
@@ -114,20 +139,25 @@ def to_json(track_list):
     c = 0
     for t in track['tracks']:
         d = {}
-        values = [t['name'], t['album']['name'], t['artists'][0]['name'], t['id'], t['album']['images'][2]['url']]
+        values = [t['name'],
+                  t['album']['name'],
+                  t['artists'][0]['name'],
+                  t['artists'][0]['id'],
+                  t['id'],
+                  t['album']['images'][2]['url']]
         d['name'] = values[0]
         d['album'] = values[1]
         d['artist'] = values[2]
-        d['id'] = values[3]
-        d['image'] = values[4]
+        d['artist_id'] = values[3]
+        d['id'] = values[4]
+        d['image'] = values[5]
         big_d[c] = d
         c += 1
-    return big_d
+    return json.dumps(big_d)
 
 
 if __name__ == '__main__':
     tl = generate_from_user_library()
-    to_json(tl)
-    # combine_recs(["e5axj2z4c8mrpix8d47f4wxmm"])
-    # generate_playlist(tl)
-    # generate_from_playlist(temp_grab_playlist()[0], temp_grab_playlist()[1])
+    a = to_json(tl)
+    generate_from_json(a)
+
