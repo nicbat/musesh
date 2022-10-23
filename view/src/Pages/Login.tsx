@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Button from '../Components/Button';
-import '../Styles/SpotifyLink.css';
+import '../Styles/Login.css';
 function Login(){
     return(<>
         <div className='wrapper'>
