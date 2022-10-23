@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../Components/Button';
 import '../Styles/Login.css';
 function Login(){
+    const navigate = useNavigate();
     const getTopSong = async () =>{
         await fetch('http://localhost:5000/generate', {
             method: 'GET',
@@ -19,8 +20,8 @@ function Login(){
             <h3>Enter your Spotify link:</h3>
             <input type="text" id="link" name="userlink"></input><br></br>
             <Button text={"next"} onClick={()=>{
-                getTopSong()
-                navigate
+                getTopSong();
+                navigate("/");
             }}/>
             </div>
             

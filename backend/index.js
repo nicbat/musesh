@@ -80,6 +80,7 @@ const addSelectedSongs = (group, addedSongs) => {
 
 //receives arrays from flask app and sends them to the frontends
 const sendRecommendedSongs = (groupId) => {
+    let group = getGroupSession(groupId);
     needle.get('http://localhost:5000', function(error, response) {//request from flask app
     if (!error && response.statusCode == 200)
         console.log(response.body);
@@ -87,7 +88,7 @@ const sendRecommendedSongs = (groupId) => {
             connection.sendUTF(JSON.stringify({
                 mode: "recomendedSongs",
                 id:groupId,
-                recomendation: response.body,
+                recomendation: {group: group},
             }))
         });
     });
@@ -128,7 +129,7 @@ groupServer.on('request', function(request) {
                         groupId:id,
                     }))
                 });
-                sendRecommendedSongs("");
+                sendRecommendedSongs(id);
             } else if((messageData.mode && messageData.mode === "groupJoin")){
                 let currentGroup = getGroupSession(messageData.groupId);
                 currentGroup.userCount++;
