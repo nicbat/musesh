@@ -5,6 +5,7 @@ import Login from './Pages/Login';
 import CreateGroup from './Pages/CreateGroup';
 import Group from './Pages/Group';
 import SelectSongs from './Pages/SelectSongs';
+import GroupCreation from './Pages/GroupCreation';
 
 
 const ws = new WebSocket('ws://localhost:8080/', 'echo-protocol');
