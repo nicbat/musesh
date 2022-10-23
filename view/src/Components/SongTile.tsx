@@ -10,8 +10,12 @@ interface SongTileProps {
 function SongTile(props: SongTileProps) {
 
     const [hover, setHover] = useState(false);
+    const [selected, setSelect] = useState(false);
     return (
-        <div className="songTile">
+        <div className={selected ? "songTile clicked" : "songTile"} onClick={(e) => {
+            setSelect(!selected);
+            console.log(selected);
+        }}>
             <div className="songImage">
                 <img className="songImage" src={props.image} 
                 onMouseEnter={(e) => {
