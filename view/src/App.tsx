@@ -36,9 +36,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Landing/>}/>
-          <Route path="/login/:groupId" element={<Login recomendedSongs={recomendedSongs.current}/>}/>
+          <Route path="/login/:groupId" element={<Login recomendedSongs={recomendedSongs}/>}/>
           <Route path="/group/:groupId" element={<GroupCreation/>}/>
-          <Route path="/select/:groupId" element={<SelectSongs selectedSongs={selectedSongs.current} recomendedSongs={recomendedSongs.current}/>}/>
+          <Route path="/select/:groupId" element={<SelectSongs selectedSongs={selectedSongs} recomendedSongs={recomendedSongs}/>}/>
           <Route path="*" element={<>404: NOT FOUND</>}/>
         </Routes>
       </Router>

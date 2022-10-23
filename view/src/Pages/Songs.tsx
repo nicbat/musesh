@@ -1,9 +1,14 @@
 import SongTile from "../Components/SongTile";
 
-function Songs() {
+function Songs(selectedSongs:React.MutableRefObject<[]>) {
     return (
         <>
-            <SongTile title={"Karma"} artist={"Taylor Swift"} album={"Midnights"} image={"https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/ypl8mcswjow3jibjgmjn/t-swift-midnights?fimg-ssr-default"}/>
+        {selectedSongs.current.map((song)=>{
+            return(
+            <SongTile title={song.title} artist={song.title} album={song.album} image={song.image}/>
+
+            );
+        })}
         </>
     );
 }

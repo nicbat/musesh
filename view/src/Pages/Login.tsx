@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { webSocketContext } from '../App';
 import Button from '../Components/Button';
 import '../Styles/Login.css';
-function Login(recomendedSongs:[]){
+function Login(recomendedSongs:React.MutableRefObject<[]>){
     const navigate = useNavigate();
     const {groupId} = useParams();
     const getTopSong = async () =>{
