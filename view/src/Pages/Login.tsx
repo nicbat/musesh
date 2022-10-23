@@ -22,7 +22,7 @@ function Login(recomendedSongs:React.MutableRefObject<[]>){
             const message = JSON.parse(evt.data);
             console.log("message from server", message);
             if(message.mode && (message.mode === "recomendedSongs")){
-                recomendedSongs = message.recomendedSongs;
+                recomendedSongs.current = message.recomendedSongs;
                 navigate("/songs/"+message.groupId);
             }
         });

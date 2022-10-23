@@ -14,7 +14,7 @@ function SelectSongs(selectedSongs:React.MutableRefObject<[]>,recomendedSongs:Re
             const message = JSON.parse(evt.data);
             console.log("message from server", message);
             if(message.mode && (message.mode === "selectedSongs")){
-                selectedSongs = message.selectedSongs;
+                selectedSongs.current = message.selectedSongs;
                 navigate("/songs/"+message.groupId);
             }
         });
