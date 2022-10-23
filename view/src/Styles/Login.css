@@ -6,22 +6,21 @@ html{
     font-family: 'Lato';
 }
 
-.wrapper{
+.wrapper .leftSide{
     margin-left: 10%;
-    display: inline-block;
+    margin-top: 10%;
 }
-.input h3{
-    font-size: 40px;
+.leftSide h3{
+    font-size: 50px;
 }
 .wrapper input{
     width: 70%;
     padding: 12px;
     border-radius: 35px;
     outline: none;
+    margin-bottom: 20%;
 }
-.input{
-    display:inline-block;
-}
+
 .spotifyIcon img{
     width: 400px;
 }

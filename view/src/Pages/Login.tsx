@@ -14,10 +14,9 @@ function Login(){
     }
     return(<>
         <div className='wrapper'>
-            <div className='input'>
+            <div className='leftSide'>
             <h3>Enter your Spotify link:</h3>
             <input type="text" id="link" name="userlink"></input><br></br>
-            <button type="button">Next</button>
             <Button text={"next"} onClick={()=>getTopSong()}/>
             </div>
             <div className='spotifyIcon'>
