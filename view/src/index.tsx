@@ -10,9 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <HeaderBar text={"Pick a few of your top songs:"} buttontext={"click me!"} buttonOnClick = {(e) => {
+    {/* <HeaderBar text={"Pick a few of your top songs:"} buttontext={"click me!"} buttonOnClick = {(e) => {
       console.log("click!");
-    }}/>
+    }}/> */}
     <App />
   </React.StrictMode>
 );
