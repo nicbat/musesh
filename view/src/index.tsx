@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import HeaderBar from './Components/HeaderBar';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    {/* <HeaderBar text={"Pick a few of your top songs:"} buttontext={"click me!"} buttonOnClick = {(e) => {
+      console.log("click!");
+    }}/> */}
     <App />
   </React.StrictMode>
 );
