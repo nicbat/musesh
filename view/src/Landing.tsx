@@ -10,7 +10,7 @@ function Landing(){
             <p>Get a quick playlist recommendation for you and your friends with just a click of a button! </p>
         </div>
         <div className='headphones'>
-            <img src={require('./images/headphones.png')}></img>
+            <img src={require('./images/headphone.png')}></img>
         </div>
         </div>
         </>
