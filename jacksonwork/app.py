@@ -13,11 +13,10 @@ Session(app)
 @app.route('/')
 def index():
     cache_handler = spotipy.cache_handler.FlaskSessionCacheHandler(session)
-    auth_manager = spotipy.oauth2.SpotifyOAuth(scope='playlist-modify-public user-top-read user-library-read',
+    auth_manager = spotipy.oauth2.SpotifyOAuth(scope="playlist-modify-public user-top-read user-library-read",
                                                cache_handler=cache_handler,
                                                show_dialog=True)
 
-    #  user-read-currently-playing playlist-modify-private
     if request.args.get("code"):
         # Step 2. Being redirected from Spotify auth page
         auth_manager.get_access_token(request.args.get("code"))
@@ -33,18 +32,10 @@ def index():
     return f'<h2>Hi {spotify.me()["display_name"]}, ' \
            f'<small><a href="/sign_out">[sign out]<a/></small></h2>' \
            f'<a href="/playlists">my playlists</a> | ' \
-           f'<a href="/generate">generate from library</a> | ' \
+           f'<a href="/generates">generate from library</a> | ' \
            f'<a href="/current_user">me</a>' \
 
-@app.route('/generate')
-def generate():
-    cache_handler = spotipy.cache_handler.FlaskSessionCacheHandler(session)
-    auth_manager = spotipy.oauth2.SpotifyOAuth(cache_handler=cache_handler)
-    if not auth_manager.validate_token(cache_handler.get_cached_token()):
-        return redirect('/')
 
-    spotify = spotipy.Spotify(auth_manager=auth_manager)
-    return main.generate_from_user_library()
 
 @app.route('/sign_out')
 def sign_out():
@@ -84,6 +75,15 @@ def current_user():
     spotify = spotipy.Spotify(auth_manager=auth_manager)
     return spotify.current_user()
 
+@app.route('/generates')
+def generate():
+    cache_handler = spotipy.cache_handler.FlaskSessionCacheHandler(session)
+    auth_manager = spotipy.oauth2.SpotifyOAuth(cache_handler=cache_handler)
+    if not auth_manager.validate_token(cache_handler.get_cached_token()):
+        return redirect('/')
+
+    tl = main.generate_from_user_library()
+    return main.to_json(tl)
 
 '''
 Following lines allow application to be run more conveniently with
@@ -92,4 +92,4 @@ Following lines allow application to be run more conveniently with
 '''
 if __name__ == '__main__':
     app.run(threaded=True, port=int(os.environ.get("PORT",
-                                                   os.environ.get("SPOTIPY_REDIRECT_URI", 8000).split(":")[-1])))
+                                                   os.environ.get("SPOTIPY_REDIRECT_URI", 5000).split(":")[-1])))
