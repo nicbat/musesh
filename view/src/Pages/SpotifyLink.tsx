@@ -11,7 +11,7 @@ function SpotifyLink(){
             </div>
 
             <div className='spotifyIcon'>
-            <img src={require('./images/spotify.png')}></img>
+            <img src={require('../images/spotify.png')}></img>
             </div>
             
         </div>

@@ -5,7 +5,7 @@ import SongTile from '../Components/SongTile';
 import '../Styles/Landing.css';
 function Landing() {
     return (<>
-        <div className='wrapper'>
+        <div className='landingWrapper'>
             <div className='Text'>
                 <p>Welcome To</p>
                 <h1>MuSesh</h1>

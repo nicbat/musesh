@@ -12,8 +12,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Landing />
-    {/* <SelectSongs/> */}
+    <App/>
   </React.StrictMode>
 );
 
