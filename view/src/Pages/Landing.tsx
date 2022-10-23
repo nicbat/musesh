@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Components/Button';
 import SongTile from '../Components/SongTile';
 import '../Styles/Landing.css';
+
 function Landing() {
+    const navigate = useNavigate();
+    const navigateToCreation = () => {
+    // 👇️ navigate to /contacts
+    navigate('/GroupCreation');
+  };
     return (<>
         <div className='landingWrapper'>
             <div className='Text'>
@@ -11,9 +18,7 @@ function Landing() {
                 <h1>MuSesh</h1>
                 <p>Get a quick playlist recommendation for you and your friends with just a click of a button! </p>
                 <div>
-                    <Button text={"click me"} onClick={(e: any) => {
-                        console.log(e);
-                    }}/>
+                    <Button text={"click me"} onClick={navigateToCreation}></Button>
                 </div>
                 {/* <SongTile artist="Taylor Swift" album="midnights" title="Karma" image="http://localhost:3000/static/media/headphones.712a9fe3b82e5fc1e5fc.png"/> */}
             </div>
