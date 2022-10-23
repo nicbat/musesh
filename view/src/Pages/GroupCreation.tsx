@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import '../Styles/GroupCreation.css';
 import Button from '../Components/Button';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import ButtonLink from '../Components/ButtonLink';
 
 function GroupCreation(){
     const {groupId} = useParams();
-    
+    const navigate = useNavigate();
+
     return(
         <>
         <div className='wrapper'>
@@ -15,7 +16,7 @@ function GroupCreation(){
                 <h1>Add People to Your Session</h1>
                 <img src={require('../images/frame.png')}></img>
                 <div className='btn'>
-                <ButtonLink text = {"Next"} to={'/login/'+groupId}></ButtonLink>
+                <Button text = {"Next"} onClick={()=>{navigate('/login/'+groupId)}}></Button>
                 </div>
             </div>
 

@@ -34,7 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing/>}/>
           <Route path="/login/:groupId" element={<Login/>}/>
-          <Route path="/:groupId" element={<GroupCreation/>}/>
+          <Route path="/group/:groupId" element={<GroupCreation/>}/>
           <Route path="/select/:groupId" element={<SelectSongs/>}/>
           <Route path="*" element={<>404: NOT FOUND</>}/>
         </Routes>

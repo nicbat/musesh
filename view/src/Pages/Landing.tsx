@@ -12,7 +12,7 @@ function Landing() {
             const message = JSON.parse(evt.data);
             console.log("message from server", message);
             if(message.mode && (message.mode === "groupCreate")){
-                navigate("/"+message.groupId);
+                navigate("/group/"+message.groupId);
             }
         });
     }, []);
