@@ -1,11 +1,15 @@
 {
-  "name": "musesh_backend",
-
-  "description": "Manages the backend for the musesh app",
+  "name": "simplebackend",
+  "version": "1.0.0",
+  "description": "backend Using nodejs",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Youssoupha Diallo, Disha M, Nicholas, Jackson",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "needle": "^3.1.0"
+  }
 }
