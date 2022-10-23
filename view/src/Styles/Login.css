@@ -8,21 +8,16 @@ html{
 
 .wrapper{
     margin-left: 10%;
-    font-size: 40px;
     display: inline-block;
+}
+.input h3{
+    font-size: 40px;
 }
 .wrapper input{
     width: 70%;
     padding: 12px;
     border-radius: 35px;
     outline: none;
-}
-button{
-    margin-top: 20%;
-    width: 20%;
-    height: 35px;
-    border-radius: 30px;
-    background-color: #C0FFFB;
 }
 .input{
     display:inline-block;

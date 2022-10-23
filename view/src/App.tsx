@@ -5,6 +5,7 @@ import Login from './Pages/Login';
 import CreateGroup from './Pages/CreateGroup';
 import Group from './Pages/Group';
 import SelectSongs from './Pages/SelectSongs';
+import GroupCreation from './Pages/GroupCreation';
 
 
 const ws = new WebSocket('ws://localhost:8080/', 'echo-protocol');
@@ -33,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/create" element={<CreateGroup/>}/>
+        <Route path="/GroupCreation" element={<GroupCreation/>}/>
         <Route path="/:groupId" element={<Group/>}/>
         <Route path="/test" element={<SelectSongs/>}/>
         <Route path="*" element={<>404: NOT FOUND</>}/>

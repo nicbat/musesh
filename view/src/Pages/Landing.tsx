@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useNavigate } from 'react-router-dom';
 import ButtonLink from '../Components/ButtonLink';
 import '../Styles/Landing.css';
+
 function Landing() {
+    const navigate = useNavigate();
+    const navigateToCreation = () => {
+    // 👇️ navigate to /contacts
+    navigate('/GroupCreation');
+  };
     return (<>
         <div className='landingWrapper'>
             <div className='Text'>
