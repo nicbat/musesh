@@ -18,7 +18,7 @@ function Landing() {
                 {/* <SongTile artist="Taylor Swift" album="midnights" title="Karma" image="http://localhost:3000/static/media/headphones.712a9fe3b82e5fc1e5fc.png"/> */}
             </div>
             <div className='headphones'>
-                <img src={require('../images/headphones.png')}></img>
+                <img src={require('../images/headphone.png')}></img>
             </div>
         </div>
     </>
