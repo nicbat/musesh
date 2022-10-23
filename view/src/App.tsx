@@ -4,12 +4,13 @@ import Landing from './Pages/Landing';
 import Login from './Pages/Login';
 import CreateGroup from './Pages/CreateGroup';
 import Group from './Pages/Group';
-import GroupCreation from './Pages/GroupCreation';
+import SelectSongs from './Pages/SelectSongs';
 
 
 const ws = new WebSocket('ws://localhost:8080/', 'echo-protocol');
-
+const webSocketContext = React.createContext(ws);
 function App() {
+
   return (
     <Router>
       <Routes>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/GroupCreation" element={<GroupCreation/>}/>
         <Route path="/:groupId" element={<Group/>}/>
+        <Route path="/test" element={<SelectSongs/>}/>
         <Route path="*" element={<>404: NOT FOUND</>}/>
       </Routes>
     </Router>
