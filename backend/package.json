@@ -1,0 +1,11 @@
+{
+  "name": "musesh_backend",
+
+  "description": "Manages the backend for the musesh app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Youssoupha Diallo, Disha M, Nicholas, Jackson",
+  "license": "ISC"
+}
