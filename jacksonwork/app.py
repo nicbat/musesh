@@ -92,4 +92,4 @@ Following lines allow application to be run more conveniently with
 '''
 if __name__ == '__main__':
     app.run(threaded=True, port=int(os.environ.get("PORT",
-                                                   os.environ.get("SPOTIPY_REDIRECT_URI", 5000).split(":")[-1])))
+                                                   os.environ.get("SPOTIPY_REDIRECT_URI", 8000).split(":")[-1])))
